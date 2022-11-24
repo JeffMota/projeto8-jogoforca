@@ -1,0 +1,44 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.jogo{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+
+    width: 80%;
+}
+
+.img-forca{
+    width: 25%;
+}
+
+.palavra-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    align-items: flex-end;
+}
+
+.btn-init{
+    background-color: #27AE60;
+    color: #fff;
+    border: none;
+    width: 200px;
+    height: 60px;
+    border-radius: 8px;
+
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.palavra{
+    font-size: 50px;
+    font-weight: 700;
+}

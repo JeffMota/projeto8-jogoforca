@@ -1,0 +1,30 @@
+.letras{
+    margin-top: 20px;
+    width: 55%;
+    height: 100px;
+    gap: 5px;
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+}
+
+.btn-let{
+    background-color: #E1ECF4;
+    color: #39739D;
+    border: 1.5px solid #39739D;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.btn-let:hover{
+    background-color: #39739D;
+    color: #E1ECF4;
+    cursor: pointer;
+}
+
+.btn-let:disabled{
+    background-color: #E1ECF4;
+    color: #9FAAB5;
+    border-color: #9FAAB5;
+    cursor:default;
+}
