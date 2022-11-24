@@ -5,13 +5,14 @@ import { useState } from "react";
 
 import "./App.css"
 
+
 function App() {
-  const [enable, setEnable] = useState('disabled')
+  const [disable, setDisable] = useState(true)
 
   return (
     <div className="app">
-      <Jogo palavras={palavras}/>
-      <Letras abilitar={enable}/>
+      <Jogo palavras={palavras} estadoBotoes={setDisable}/>
+      <Letras abilitar={disable}/>
     </div>
   );
 }
