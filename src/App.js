@@ -4,6 +4,7 @@ import palavras from "./palavras"
 import { useState } from "react";
 
 import "./App.css"
+import Chute from "./Components/Chute";
 let letrasEscolhidas = []
 let erro = 0
 let letrasCertas = []
@@ -16,10 +17,11 @@ function App() {
   const [palavra, setPalavra] = useState('')
   const [array, setArray] = useState([])
   const [resultado, setResultado] = useState('')
-
+  const [chute, setChute] = useState('')
   const [img, setImg] = useState(0)
 
   const j = []
+  let aux = [...array]
 
   function escolherPalavra() {
     setArray([])
@@ -31,8 +33,6 @@ function App() {
 
     const escolha = palavras[Math.floor(Math.random() * palavras.length)]
 
-    alert(escolha)
-
     setPalavra(escolha)
     setDisable(false)
 
@@ -42,9 +42,8 @@ function App() {
       j.push('_')
       setArray(j)
     }
-
+    alert(escolha)
   }
-  let aux = [...array]
 
   function tentarLetra(letra) {
 
@@ -65,12 +64,8 @@ function App() {
       letrasEscolhidas.push(letra)
     }
 
-    console.log('Letras certas:', letrasCertas)
-    console.log('erro: ', erro)
-
     //Se errar seis vezes
     if (erro == 6) {
-      alert('perdeu')
       setArray(palavra.split(''))
       setResultado('errado')
       letrasEscolhidas = alfabeto;
@@ -80,13 +75,9 @@ function App() {
     //Checando se a palavra confere
     if (letrasCertas.length == palavra.length) {
       if (checarPalavra(letrasCertas)) {
-        alert('acertou')
         letrasEscolhidas = alfabeto;
         setResultado('certo')
-      } else {
-        alert('não parebens')
-        letrasEscolhidas = alfabeto;
-        setResultado('errado')
+        setDisable(true)
       }
 
     }
@@ -104,11 +95,28 @@ function App() {
     return result
   }
 
+  function chutarPalavra(chute){
+    if(chute == palavra){
+      letrasEscolhidas = alfabeto
+      setResultado('certo')
+      setArray(palavra)
+      setDisable(true)
+    }else {
+      letrasEscolhidas = alfabeto
+      setResultado('errado')
+      setArray(palavra)
+      setDisable(true)
+      setImg(6)
+    }
+    setChute('')
+  }
+
 
   return (
     <div className="app">
       <Jogo resultado={resultado} img={img} array={array} estadoBotoes={setDisable} escolherPalavra={escolherPalavra} />
       <Letras abilitar={disable} tentarLetra={tentarLetra} letrasEscolhidas={letrasEscolhidas} />
+      <Chute abilitar={disable} setChute={setChute} chutarPalavra={chutarPalavra} chute={chute}/>
     </div>
   );
 }
