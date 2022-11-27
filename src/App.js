@@ -114,7 +114,7 @@ function App() {
 
   return (
     <div className="app">
-      <Jogo resultado={resultado} img={img} array={array} estadoBotoes={setDisable} escolherPalavra={escolherPalavra} />
+      <Jogo resultado={resultado} img={img} array={array} palavra={palavra} estadoBotoes={setDisable} escolherPalavra={escolherPalavra} />
       <Letras abilitar={disable} tentarLetra={tentarLetra} letrasEscolhidas={letrasEscolhidas} />
       <Chute abilitar={disable} setChute={setChute} chutarPalavra={chutarPalavra} chute={chute}/>
     </div>

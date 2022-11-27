@@ -10,6 +10,7 @@ export default function Letras(props){
         <div className="letras">
             {alfabeto.map(elm => 
             <button 
+                data-test="letter "
                 key={elm} 
                 disabled={letrasEscolhidas.includes(elm) ? true:props.abilitar} 
                 className="btn-let" 
