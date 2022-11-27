@@ -9,9 +9,9 @@ export default function Jogo(props) {
 
     return (
         <div className="jogo">
-            <img data-test="game-image " className="img-forca" src={img} alt="img-forca"></img>
+            <img data-test="game-image" className="img-forca" src={img} alt="img-forca"></img>
             <div className="palavra-box">
-                <button data-test="choose-word " className="btn-init" onClick={escolherPalavra}>Escolher Palavra</button>
+                <button data-test="choose-word" className="btn-init" onClick={escolherPalavra}>Escolher Palavra</button>
                 <div data-test="word" data-answer={props.palavra} className={'palavra '+ resultado} >{array}</div>
             </div>
         </div>
