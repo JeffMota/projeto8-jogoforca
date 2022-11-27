@@ -68,6 +68,7 @@ function App() {
       setArray(palavra.split(''))
       setResultado('errado')
       letrasEscolhidas = alfabeto;
+      setDisable(true)
       return
     }
 
