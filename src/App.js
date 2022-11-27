@@ -42,7 +42,6 @@ function App() {
       j.push('_')
       setArray(j)
     }
-    alert(escolha)
   }
 
   function tentarLetra(letra) {
