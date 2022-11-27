@@ -4,13 +4,14 @@ const alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m
 
 export default function Letras(props){
     const tentarLetra = props.tentarLetra
+    const letrasEscolhidas = props.letrasEscolhidas
 
     return(
         <div className="letras">
             {alfabeto.map(elm => 
             <button 
                 key={elm} 
-                disabled={props.abilitar} 
+                disabled={letrasEscolhidas.includes(elm) ? true:props.abilitar} 
                 className="btn-let" 
                 onClick={() => tentarLetra(elm)} >{elm.toUpperCase()}
             </button>)}

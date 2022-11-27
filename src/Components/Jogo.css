@@ -43,3 +43,11 @@
     font-weight: 700;
     letter-spacing: 10px;
 }
+
+.certo{
+    color: green;
+}
+
+.errado{
+    color: red;
+}
